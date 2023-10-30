@@ -1,19 +1,28 @@
+$background: #111111;
+$text: white;
+$primary: #FF6CBE;
+$secondary: #08F3F7;
+
 html,
 body {
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
-  background: black;
+  background: $background;
   font-family: "Roboto", sans-serif;
   width: 100%;
   height: 100%;
-  color: white;
+  color: $text;
 }
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  ::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+  }
 }
 
 h1,
@@ -43,38 +52,144 @@ header {
     left: 0;
     right: 0;
     content: "";
-    background: rgba(0, 0, 0, 0.3);
+    background: linear-gradient(
+      180deg,
+      $background 0%,
+      #11111136 20%,
+      #11111136 80%,
+      $background 100%
+    );
+  }
+
+  .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+
+    h1 {
+      font-size: 30rem;
+      text-transform: uppercase;
+      position: relative;
+
+      &::before {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        content: "ZERO";
+        color: transparent;
+        z-index: 2;
+        -webkit-text-stroke-color: white;
+        -webkit-text-stroke-width: 4px;
+      }
+    }
+
+    img {
+      position: absolute;
+      width: 500px;
+    }
   }
 }
 
-.content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  z-index: 2;
 
-  h1 {
-    font-size: 35rem;
-    text-transform: uppercase;
-    position: relative;
+main {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 2rem 0;
 
-    &::before {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      content: "ZERO";
-      color: transparent;
-      z-index: 2;
-      -webkit-text-stroke-color: white;
-      -webkit-text-stroke-width: 4px;
+  section {
+    margin: 3rem 0;
+
+    h2 {text-align: center; margin-bottom: 2rem; font-size: 2.5rem;}
+
+    .content {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 2rem;
+
+      .text {
+        width: 400px;
+        font-size: 1.1rem;
+        line-height: 1.25;
+        p {
+          margin-bottom: 1rem;
+        }
+
+        a {
+          color: $text;
+          background: $primary;
+          border-radius: .5rem;
+          text-decoration: none;
+          padding: .5rem 1.5rem;
+        }
+      }
+
+      img {
+        width: 400px;
+        border-radius: 1rem;
+      }
     }
-  }
 
-  img {
-    position: absolute;
-    width: 550px;
+    .shop-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+
+      .product {
+        width: 350px;
+        padding: 1rem;
+        border-radius: 1rem;
+        background: lighten($background, 10);
+        transition: .3s ease-in-out;
+
+        img {
+          width: 100%;
+          border-radius: .5rem;
+          background: white;
+        }
+
+        .text {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-top: 1rem;
+        }
+
+        h3 {
+          font-size: 1.5rem;
+        }
+
+        .price {
+          font-size: 1.25rem;
+          font-weight: bold;
+        }
+
+        a {
+          background: $secondary;
+          color: $text;
+          text-decoration: none;
+          width: 100%;
+          padding: .5rem 0;
+          font-size: 1.5rem;
+          font-family: "Futurist", sans-serif;
+          text-align: center;
+          display: block;
+          color: black;
+          margin-top: 1rem;
+          border-radius: .5rem;
+        }
+
+        &:hover {
+          transform: scale(1.025);
+          background: lighten($background, 15);
+        }
+      }
+    }
   }
 }
