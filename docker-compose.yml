@@ -6,7 +6,7 @@ services:
     container_name: zerodrink.dcreative.cz
     restart: "always"
     volumes:
-      - ./web:/static:ro
+      - ./:/static:ro
     labels:
       - "traefik.http.routers.zerodrink_https.rule=Host(`zerodrink.dcreative.cz`)"
       - "traefik.http.routers.zerodrink_https.entrypoints=websecure"
