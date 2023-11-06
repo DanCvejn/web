@@ -9,6 +9,10 @@ body {
   height: 100%;
   color: white;
 }
+html.no-scroll,
+body.no-scroll {
+  overflow: hidden;
+}
 
 * {
   box-sizing: border-box;
@@ -67,7 +71,7 @@ header .content h1::before {
   bottom: 0;
   left: 0;
   right: 0;
-  content: "ZERO";
+  content: attr(data-title);
   color: transparent;
   z-index: 2;
   -webkit-text-stroke-color: white;
@@ -84,7 +88,17 @@ main {
   padding: 2rem 0;
 }
 main section {
-  margin: 3rem 0;
+  margin: 2rem 0;
+  padding: 2rem 0;
+}
+main section.giveaway-content .content .text {
+  max-width: 700px;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+main section.giveaway-content .content .text li {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
 }
 main section h2 {
   text-align: center;
@@ -106,11 +120,15 @@ main section .content .text p {
   margin-bottom: 1rem;
 }
 main section .content .text a {
+  display: block;
   color: white;
   background: #FF6CBE;
   border-radius: 0.5rem;
   text-decoration: none;
   padding: 0.5rem 1.5rem;
+  margin-top: 2rem;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 main section .content img {
   width: 400px;
@@ -165,4 +183,145 @@ main section .shop-content .product a {
 main section .shop-content .product:hover {
   transform: scale(1.025);
   background: #373737;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 3rem;
+  background: url("../images/bg-web-04.png");
+  background-size: cover;
+  position: relative;
+}
+footer::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  content: "";
+  background: linear-gradient(180deg, #111111 0%, rgba(17, 17, 17, 0.2117647059) 20%, rgba(17, 17, 17, 0.2117647059) 80%, #111111 100%);
+}
+footer .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  gap: 2rem;
+  max-width: min(800px, 95vw);
+  width: 100%;
+}
+footer .content .map {
+  border-radius: 1rem;
+  width: 70%;
+  height: 200px;
+}
+footer .content .text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 0.5rem;
+  text-align: right;
+  height: 100%;
+  width: 30%;
+}
+footer .content .text h2 {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+footer .content .text p {
+  font-size: 1.1rem;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+.modal.closed {
+  display: none;
+}
+.modal section.giveaway {
+  background: #08F3F7;
+  color: #111111;
+  border-radius: 1rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+  max-width: 600px;
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+}
+.modal section.giveaway .close-button {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.75rem;
+  font-size: 1.25rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+.modal section.giveaway h2 {
+  margin-bottom: 1rem;
+  font-size: 1.75rem;
+}
+.modal section.giveaway .content .text p {
+  margin-bottom: 0.5rem;
+}
+.modal section.giveaway .content .text a {
+  display: block;
+  color: white;
+  background: #FF6CBE;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  padding: 0.5rem 1.5rem;
+  margin: auto;
+  margin-top: 1rem;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+@media only screen and (max-width: 1400px) {
+  header .content h1 {
+    font-size: 25rem;
+  }
+  header .content h1.smaller {
+    font-size: 20rem;
+  }
+  header .content img {
+    width: 350px;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  header .content h1 {
+    font-size: 20rem;
+  }
+  header .content h1.smaller {
+    font-size: 15rem;
+  }
+  header .content img {
+    width: 350px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  header .content h1 {
+    font-size: 15rem;
+  }
+  header .content h1.smaller {
+    font-size: 10rem;
+  }
+  header .content img {
+    width: 500px;
+  }
 }/*# sourceMappingURL=style.css.map */

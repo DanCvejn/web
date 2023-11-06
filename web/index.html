@@ -7,10 +7,10 @@
     <link rel="stylesheet" href="./assets/styles/style.css">
     <title>ZERO Drink</title>
   </head>
-  <body>
+  <body class="no-scroll">
     <header>
       <div class="content">
-        <h1>Zero</h1>
+        <h1 data-title="Zero">Zero</h1>
         <img src="./assets/images/basic-transformed.jpg" alt="">
       </div>
     </header>
@@ -20,7 +20,12 @@
         <div class="content">
           <img src="./assets/images/can-with-liquid.png" alt="Can with liquid 3D render">
           <div class="text">
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus consequatur molestiae nesciunt, commodi facilis expedita molestias fuga? Autem amet provident, nostrum accusamus magni, voluptatum deserunt dignissimos omnis, qui iste reprehenderit! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime magni cum eveniet tenetur minus aspernatur deserunt laborum, consequatur fugit veritatis distinctio, vero cupiditate doloribus illo assumenda? Rerum possimus temporibus libero!</p>
+            <p>
+              Hledáte tu nejlepší vodu s elektrolyty, která by zlepšila vaši základní hydrataci? Nehledejte nic jiného než naši Chytrou vodu s elektrolyty. Není to jen tak ledajaká voda - je to nejlepší voda s elektrolyty a minerály pro zvýšení hydratace.
+            </p>
+            <p>
+              Naše srovnání vod s elektrolyty odhaluje, že náš výrobek vyniká mnoha výhodami. Na rozdíl od běžné vody nabízí naše voda s elektrolyty dokonalou rovnováhu minerálů a hydratace. Je to nejlepší volba pro ty, kteří si cení svého zdraví a pohody.
+            </p>
             <a href="">Přečíst více</a>
           </div>
         </div>
@@ -47,5 +52,35 @@
         </div>
       </section>
     </main>
+    <footer>
+      <div class="content">
+        <div class="text">
+          <h2>Zero Drink</h2>
+          <p>zerodrink@dcreative.cz</p>
+          <p>Studentská 1402/2</p>
+          <p>461 17 Liberec 1</p>
+        </div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d667.1561564475868!2d15.075279682027123!3d50.77327823486771!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4709341bc28a0757%3A0x1dfdc9abb1edd3de!2sStudentsk%C3%A1%201402%2F2%2C%20461%2017%20Liberec%201!5e0!3m2!1scs!2scz!4v1699273183549!5m2!1scs!2scz" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map"></iframe>
+      </div>
+    </footer>
+    <div class="modal">
+      <section class="giveaway">
+        <div class="close-button">&#x2715;</div>
+        <h2>Momentálně probíhá soutěž!</h2>
+        <div class="content">
+          <div class="text">
+            <p>Na našem instagramu právě probíhá soutěž. Zkus se zapojit a třeba <b>vyhraješ</b>. Hrajeme o celoměsíční zásobu našeho drinku.</p>
+            <a href="./soutez.html">Zjistit více informací</a>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script>
+      const closeButtonModal = document.querySelector('.close-button');
+      closeButtonModal.addEventListener('click', () => {
+        document.querySelector('.modal').classList.add("closed");
+        document.querySelector('body').classList.remove("no-scroll");
+      });
+    </script>
   </body>
 </html>
